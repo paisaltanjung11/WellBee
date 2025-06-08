@@ -9,10 +9,14 @@ use App\Models\User;
 
 class LoginController extends Controller
 {
+    public function showLoginForm()
+    {
+        return view('login');
+    }
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'email'    => ['required', 'email'],
+            'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
 
@@ -23,7 +27,7 @@ class LoginController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'Email atau password salah.',
+            'email' => 'Wrong email or password.',
         ])->withInput();
     }
 

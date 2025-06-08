@@ -15,6 +15,7 @@
   <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}" />
   <!-- Load dark mode script early -->
   <script src="{{ asset('js/darkmode.js') }}" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -44,6 +45,8 @@
       </div>
     </nav>
   </header>
+
+  @include('partials.navbar')
 
   <main class="dashboard-container">
     @if (is_null($user->bmi))
@@ -167,10 +170,10 @@
               <span id="currentWeight">65</span>
               <span class="metric-unit">kg</span>
             </div>
-            <div class="metric-change positive">
+            <!-- <div class="metric-change positive">
               <span>-2.5kg</span>
               <span>Last 30 days</span>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -234,16 +237,18 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="{{ asset('js/dashboard.js') }}"></script>
   <script>
     window.userData = {
       name: "{{ $user->first_name }} {{ $user->last_name }}",
       bmi: {{ $user->bmi ?? 'null' }},
       weight: {{ $user->weight ?? 'null' }},
       height: {{ $user->height ?? 'null' }},
+      bmiHistory: @json($bmiHistory),
     };
   </script>
+
+
+  <script src="{{ asset('js/dashboard.js') }}"></script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {

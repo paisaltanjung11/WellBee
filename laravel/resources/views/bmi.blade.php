@@ -22,11 +22,20 @@
 
     <nav class="navbar">
       <div class="nav-center">
-        <a href="{{ route('dashboard') }}" class="{{ Request::routeIs('dashboard') ? 'active' : '' }}">Dashboard</a>
-        <a href="{{ route('exercise') }}" class="{{ Request::routeIs('exercise') ? 'active' : '' }}">Exercise</a>
-        <a href="{{ route('nutrition') }}" class="{{ Request::routeIs('nutrition') ? 'active' : '' }}">Nutrition</a>
-        <a href="{{ route('nearby') }}" class="{{ Request::routeIs('nearby') ? 'active' : '' }}">Nearby</a>
+        @if (Auth::check())
+      <!-- Menu for logged-in users -->
+      <a href="{{ route('dashboard') }}" class="{{ Request::routeIs('dashboard') ? 'active' : '' }}">Dashboard</a>
+      <a href="{{ route('exercise') }}" class="{{ Request::routeIs('exercise') ? 'active' : '' }}">Exercise</a>
+      <a href="{{ route('nutrition') }}" class="{{ Request::routeIs('nutrition') ? 'active' : '' }}">Nutrition</a>
+      <a href="{{ route('nearby') }}" class="{{ Request::routeIs('nearby') ? 'active' : '' }}">Nearby</a>
+    @else
+      <!-- Menu for guest users -->
+      <a href="{{ route('index') }}" class="{{ Request::routeIs('index') ? 'active' : '' }}">Home</a>
+      <a href="{{ route('bmi') }}" class="{{ Request::routeIs('bmi') ? 'active' : '' }}">BMI Calculator</a>
+      <a href="{{ route('about-us') }}" class="{{ Request::routeIs('about-us') ? 'active' : '' }}">About</a>
+    @endif
       </div>
+      <!-- Right side -->
       <div class="nav-right">
         @if (Auth::check())
       <!-- User is logged in -->
@@ -57,23 +66,32 @@
       </div>
 
       <div class="calculator-form">
-        <form method="POST" action="{{ route('bmi.save') }}">
+        <form id="bmiForm" @if(Auth::check()) method="POST" action="{{ route('bmi.save') }}" @endif>
           @csrf
 
           <div class="input-group">
             <label for="height">Enter Your Height (cm)</label>
-            <input type="number" name="height" id="height" value="{{ $user->height ?? '' }}" required />
+            <input type="number" name="height" id="height"
+              value="{{ Auth::check() ? (Auth::user()->height ?? '') : '' }}" required />
           </div>
 
           <div class="input-group">
             <label for="weight">Enter Your Weight (kg)</label>
-            <input type="number" name="weight" id="weight" value="{{ $user->weight ?? '' }}" required />
+            <input type="number" name="weight" id="weight"
+              value="{{ Auth::check() ? (Auth::user()->weight ?? '') : '' }}" required />
             <p class="input-hint">* Input your height and weight</p>
           </div>
 
-          <button type="submit" class="calculate-btn">
-            {{ is_null($user->bmi) ? 'Save BMI' : 'Update BMI' }}
-          </button>
+          @if (Auth::check())
+        <button type="submit" class="calculate-btn">
+        {{ is_null(Auth::user()->bmi) ? 'Save BMI' : 'Update BMI' }}
+        </button>
+      @else
+        <!-- Guest User -->
+        <button type="button" class="calculate-btn" onclick="calculateBMI()">
+        Calculate BMI
+        </button>
+      @endif
         </form>
       </div>
     </div>
@@ -175,7 +193,6 @@
         </div> -->
     </div>
   </footer>
-
   <script src="{{ asset('js/bmi.js') }}"></script>
 </body>
 

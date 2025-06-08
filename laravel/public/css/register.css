@@ -248,7 +248,7 @@ body {
     border-color: #ddd;
 }
 
-/* Login Link Styles */
+
 .login-link {
     text-align: center;
     font-size: 1.4rem;
@@ -266,7 +266,6 @@ body {
     text-decoration: underline;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;

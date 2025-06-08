@@ -19,26 +19,30 @@
 </head>
 
 <body>
-  <header class="header">
-    <a href="{{ route('index') }}" class="logo" aria-label="WellBee Home">
-      <span class="well">Well</span><span class="bee">Bee</span>
-    </a>
+  <nav class="navbar">
+    <div class="nav-center">
+      <a href="{{ route('dashboard') }}" class="{{ Request::routeIs('dashboard') ? 'active' : '' }}">Dashboard</a>
+      <a href="{{ route('exercise') }}" class="{{ Request::routeIs('exercise') ? 'active' : '' }}">Exercise</a>
+      <a href="{{ route('nutrition') }}" class="{{ Request::routeIs('nutrition') ? 'active' : '' }}">Nutrition</a>
+      <a href="{{ route('nearby') }}" class="{{ Request::routeIs('nearby') ? 'active' : '' }}">Nearby</a>
+    </div>
+    <div class="nav-right">
 
-    <nav class="navbar">
-      <div class="nav-center">
-        <a href="{{ route('dashboard') }}" class="{{ Request::routeIs('dashboard') ? 'active' : '' }}">Dashboard</a>
-        <a href="{{ route('exercise') }}" class="{{ Request::routeIs('exercise') ? 'active' : '' }}">Exercise</a>
-        <a href="{{ route('nutrition') }}" class="{{ Request::routeIs('nutrition') ? 'active' : '' }}">Nutrition</a>
-        <a href="{{ route('nearby') }}" class="{{ Request::routeIs('nearby') ? 'active' : '' }}">Nearby</a>
-      </div>
-      <div class="nav-right">
-        <a href="{{ route('index') }}" class="profile-menu">
-          <img src="{{ asset('images/user-icon/user2.png') }}" alt="Profile" class="avatar" />
-          <span id="userName">User</span>
-        </a>
-      </div>
-    </nav>
+      <a href="{{ route('index') }}" class="profile-menu">
+        <img src="{{ asset('images/user-icon/user2.png') }}" alt="Profile" class="avatar" />
+        <span id="userName">{{ $user->first_name }} {{ $user->last_name }}</span>
+      </a>
+
+
+      <form method="POST" action="{{ route('logout') }}" style="display:inline;">
+        @csrf
+        <button type="submit" class="sign-in" style="margin-left: 1rem;">Logout</button>
+      </form>
+    </div>
+  </nav>
   </header>
+
+  @include('partials.navbar')
 
   <main class="nutrition-container">
     <!-- Hero Section -->
@@ -72,14 +76,14 @@
       <div class="meal-plan-categories">
         <div class="meal-plan-card" id="balancedDiet">
           <div class="meal-plan-icon">
-            <img src="{{ asset('images/balanced-diet.png') }}" alt="Balanced Diet" />
+            <img src="{{ asset('images/nutrition/balanced-diet.jpg') }}" alt="Balanced Diet" />
           </div>
           <h3>Balanced Diet</h3>
           <p>
             A well-rounded meal plan with proper portions of carbs, proteins,
             and fats.
           </p>
-          <div class="tag-recommended" id="balancedRecommended">
+          <div class="tag-recommended" id="balancedRecommended" style="display: none;">
             Recommended for you
           </div>
           <a href="#" class="btn-secondary" data-meal-plan="balanced">View Plan</a>
@@ -87,25 +91,27 @@
 
         <div class="meal-plan-card" id="weightLoss">
           <div class="meal-plan-icon">
-            <img src="{{ asset('images/weight-loss.png') }}" alt="Weight Loss Diet" />
+            <img src="{{ asset('images/nutrition/weightloss-diet.jpg') }}" alt="Muscle Gain Diet" />
           </div>
           <h3>Weight Loss Diet</h3>
           <p>
             Calorie-controlled meals with high protein to maintain muscle
             while losing fat.
           </p>
+          <div class="tag-recommended" id="weightLossRecommended" style="display: none;">Recommended for you</div>
           <a href="#" class="btn-secondary" data-meal-plan="weightLoss">View Plan</a>
         </div>
 
         <div class="meal-plan-card" id="muscleGain">
           <div class="meal-plan-icon">
-            <img src="{{ asset('images/muscle-gain.png') }}" alt="Muscle Gain Diet" />
+            <img src="{{ asset('images/nutrition/musclegain-diet.jpg') }}" alt="Weight Loss Diet" />
           </div>
           <h3>Muscle Gain Diet</h3>
           <p>
             High protein, calorie-surplus meals to support muscle growth and
             recovery.
           </p>
+          <div class="tag-recommended" id="muscleGainRecommended" style="display: none;">Recommended for you</div>
           <a href="#" class="btn-secondary" data-meal-plan="muscleGain">View Plan</a>
         </div>
       </div>
@@ -231,7 +237,6 @@
           <ul>
             <li>
               Stay hydrated by drinking at least 8 glasses of water daily
-            </li>
             <li>Aim for 5 servings of fruits and vegetables each day</li>
             <li>Limit processed foods and added sugars</li>
             <li>
@@ -534,6 +539,14 @@
       <p>&copy; 2025 WellBee. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    window.userData = {
+      bmi: {{ $user->bmi ?? 'null' }},
+      weight: {{ $user->weight ?? 'null' }},
+      height: {{ $user->height ?? 'null' }},
+    };
+  </script>
 
   <script src="{{ asset('js/nutrition.js') }}"></script>
 </body>

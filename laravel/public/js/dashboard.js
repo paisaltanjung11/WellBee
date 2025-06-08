@@ -94,8 +94,106 @@ function initDashboard() {
     currentWeight.textContent =
         userData.weight !== null ? userData.weight : "--";
 
+    // Init BMI Chart if data available
+    if (userData.bmiHistory && userData.bmiHistory.length > 0) {
+        initBmiChart();
+    }
+
     // Init listeners
     initEventListeners();
+}
+
+// Initialize BMI Chart
+function initBmiChart() {
+    console.log("Rendering BMI Chart..."); // Debug log
+
+    const bmiChartCtx = document.getElementById("bmiChart").getContext("2d");
+
+    const bmiLabels = window.userData.bmiHistory.map((item) => item.date);
+    const bmiData = window.userData.bmiHistory.map((item) => item.bmi);
+
+    console.log("Labels:", bmiLabels);
+    console.log("Data:", bmiData);
+
+    // Hitung BMI Average
+    const averageBmi =
+        bmiData.reduce((acc, val) => acc + val, 0) / bmiData.length;
+
+    new Chart(bmiChartCtx, {
+        type: "line",
+        data: {
+            labels: bmiLabels,
+            datasets: [
+                {
+                    label: "BMI History (Last 30 Days)",
+                    data: bmiData,
+                    borderColor: "#04a6c2",
+                    backgroundColor: "rgba(4, 166, 194, 0.08)", // Lebih soft
+                    fill: true,
+                    tension: 0.4, // Lebih halus curve
+                    pointRadius: 4, // lebih kecil elegan
+                    pointHoverRadius: 6,
+                    pointBackgroundColor: "#04a6c2",
+                    pointBorderColor: "#fff",
+                },
+                {
+                    label: "BMI Average",
+                    data: Array(bmiData.length).fill(averageBmi),
+                    borderColor: "#999999", // Soft grey
+                    borderDash: [5, 5],
+                    fill: false,
+                    pointRadius: 0,
+                    pointHoverRadius: 0,
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            layout: {
+                padding: {
+                    left: 20,
+                    right: 20,
+                    top: 20,
+                    bottom: 20,
+                },
+            },
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    suggestedMin: 10,
+                    suggestedMax: 40,
+                    grid: {
+                        color: "#eeeeee", // Grid ringan
+                    },
+                },
+                x: {
+                    grid: {
+                        color: "#f5f5f5", // Grid ringan
+                    },
+                },
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        color: "#333",
+                        font: {
+                            size: 13,
+                        },
+                    },
+                },
+                tooltip: {
+                    enabled: true,
+                    backgroundColor: "#fff",
+                    titleColor: "#333",
+                    bodyColor: "#333",
+                    borderColor: "#ccc",
+                    borderWidth: 1,
+                },
+            },
+        },
+    });
 }
 
 // Get BMI category and details

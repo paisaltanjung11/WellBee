@@ -9,7 +9,6 @@ const resultsCount = document.getElementById("resultsCount");
 const loadMoreBtn = document.getElementById("loadMoreBtn");
 const themeToggleBtn = document.getElementById("themeToggleBtn");
 
-// Mock data for nearby locations (in a real app, this would come from an API)
 const mockLocations = {
   gyms: [
     {
