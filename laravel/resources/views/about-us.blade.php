@@ -75,7 +75,7 @@
 
         <div class="story-container">
           <div class="story-image">
-            <img src="{{ asset('images/story-image.png') }}" alt="The story of WellBee" />
+            <img src="{{ asset('images/story-image.jpg') }}" alt="The story of WellBee" />
             <div class="pattern-dots pattern-dots-left"></div>
           </div>
           <div class="story-content">

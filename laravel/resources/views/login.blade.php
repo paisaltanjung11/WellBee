@@ -31,20 +31,36 @@
           <h1>Welcome Back!</h1>
           <p>Login to access your personalized health dashboard</p>
 
-          <form class="login-form">
+          <!-- Login Form -->
+          <form class="login-form" method="POST" action="{{ route('login.attempt') }}">
+            @csrf
+
+            <!-- Flash Success -->
+            @if(session('success'))
+              <div class="success">{{ session('success') }}</div>
+            @endif
+
+            <!-- Error Message -->
+            @if($errors->any())
+              <div class="error">{{ $errors->first() }}</div>
+            @endif
+
+            <!-- Email -->
             <div class="input-group">
-              <input type="email" id="email" required placeholder="Email" />
+              <input type="email" id="email" name="email" required placeholder="Email" value="{{ old('email') }}" />
             </div>
 
+            <!-- Password -->
             <div class="input-group">
               <div class="password-input">
                 <input
                   type="password"
                   id="password"
+                  name="password"
                   required
                   placeholder="Enter your password"
                 />
-                <button type="button" class="toggle-password">
+                <button type="button" class="toggle-password" onclick="togglePassword()">
                   <svg
                     class="eye-icon"
                     xmlns="http://www.w3.org/2000/svg"
@@ -64,20 +80,24 @@
               </div>
             </div>
 
+            <!-- Remember Me -->
             <div class="form-options">
               <label class="remember-me">
-                <input type="checkbox" id="remember" />
+                <input type="checkbox" name="remember" />
                 <span>Remember me</span>
               </label>
               <a href="#" class="forgot-password">Forgot Password?</a>
             </div>
 
+            <!-- Login Button -->
             <button type="submit" class="login-btn">Login</button>
 
+            <!-- Divider -->
             <div class="divider">
               <span>OR</span>
             </div>
 
+            <!-- Google Login -->
             <div class="social-login">
               <button type="button" class="google-btn">
                 <img src="{{ asset('images/google.png') }}" alt="Google" />
@@ -85,6 +105,7 @@
               </button>
             </div>
 
+            <!-- Register Link -->
             <div class="register-link">
               Don't have an account? <a href="{{ route('register') }}">Register Now</a>
             </div>
@@ -93,6 +114,7 @@
       </div>
     </div>
 
+    <!-- Toggle Password Script -->
     <script>
       function togglePassword() {
         const passwordInput = document.getElementById("password");

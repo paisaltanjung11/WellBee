@@ -42,7 +42,7 @@
           <h1 id="main-title">Health & Fitness Tracker</h1>
           <p>Monitor your health and track your fitness goals with ease</p>
           <div class="btn-group">
-            <a href="bmi.html" class="btn">Get Started</a>
+          <a href="{{ route('bmi') }}" class="btn">Get Started</a>
           </div>
         </div>
         <div class="home-img">

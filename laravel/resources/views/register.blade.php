@@ -29,7 +29,11 @@
       <div class="right-section">
         <div class="form-container">
           <h1>Create an account</h1>
-          <form class="register-form">
+          <form class="register-form" method="POST" action="{{ route('register.store') }}">
+            @csrf
+            @if($errors->any())
+              <div class="error">{{ $errors->first() }}</div>
+            @endif
             <!-- Name Fields -->
             <div class="name-fields">
               <div class="input-group">
@@ -39,6 +43,7 @@
                   name="firstName"
                   required
                   placeholder="First name"
+                  value="{{ old('firstName') }}"
                 />
               </div>
               <div class="input-group">
@@ -48,6 +53,7 @@
                   name="lastName"
                   required
                   placeholder="Last name"
+                  value="{{ old('lastName') }}"
                 />
               </div>
             </div>
@@ -60,6 +66,7 @@
                 name="email"
                 required
                 placeholder="Email"
+                value="{{ old('email') }}"
               />
             </div>
 
@@ -73,7 +80,7 @@
                   required
                   placeholder="Enter your password"
                 />
-                <button type="button" class="toggle-password">
+                <button type="button" class="toggle-password" onclick="togglePassword()">
                   <svg
                     class="eye-icon"
                     xmlns="http://www.w3.org/2000/svg"
@@ -98,12 +105,12 @@
               <div class="password-input">
                 <input
                   type="password"
-                  id="confirmPassword"
-                  name="confirmPassword"
+                  id="password_confirmation"
+                  name="password_confirmation"
                   required
                   placeholder="Confirm your password"
                 />
-                <button type="button" class="toggle-password">
+                <button type="button" class="toggle-password" onclick="toggleConfirmPassword()">
                   <svg
                     class="eye-icon"
                     xmlns="http://www.w3.org/2000/svg"
@@ -158,5 +165,18 @@
         </div>
       </div>
     </div>
+    <script>
+  function togglePassword() {
+    const passwordInput = document.getElementById("password");
+    passwordInput.type =
+      passwordInput.type === "password" ? "text" : "password";
+  }
+
+  function toggleConfirmPassword() {
+    const passwordInput = document.getElementById("password_confirmation");
+    passwordInput.type =
+      passwordInput.type === "password" ? "text" : "password";
+  }
+</script>
   </body>
 </html>

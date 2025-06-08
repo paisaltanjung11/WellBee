@@ -1,17 +1,39 @@
 <?php
 
-namespace App\Http\LoginControllers;
+namespace App\Http\Controllers;
 
-abstract class Controller
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+
+class LoginController extends Controller
 {
     public function login(Request $request)
     {
-        $user = User::where('email', $request->email)->first();
+        $credentials = $request->validate([
+            'email'    => ['required', 'email'],
+            'password' => ['required'],
+        ]);
 
-        if ($user && Hash::check($request->password, $user->password)) {
-            Auth::login($user);
-            return redirect('/dashboard');
+        if (Auth::attempt($credentials, $request->boolean('remember'))) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('/dashboard');
         }
-        return back()->with('error', 'Email atau password salah');
+
+        return back()->withErrors([
+            'email' => 'Email atau password salah.',
+        ])->withInput();
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
     }
 }

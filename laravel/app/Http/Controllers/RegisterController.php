@@ -1,23 +1,27 @@
 <?php
 
-namespace App\Http\RegisterControllers;
+namespace App\Http\Controllers;
 
-abstract class Controller
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
+class RegisterController extends Controller
 {
     public function store(Request $request)
     {
         $request->validate([
-            'first name' => 'required|string|max:255',
-            'last name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|string|confirmed|min:6',
+            'firstName' => 'required|string|max:255',
+            'lastName'  => 'required|string|max:255',
+            'email'     => 'required|email|unique:users,email',
+            'password'  => 'required|string|confirmed|min:6',
         ]);
 
         User::create([
-            'first name' => $request->firstname,
-            'last name' => $request->lastname,
-            'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'first_name' => $request->firstName,
+            'last_name'  => $request->lastName,
+            'email'      => $request->email,
+            'password'   => Hash::make($request->password),
         ]);
 
         return redirect('/login');
