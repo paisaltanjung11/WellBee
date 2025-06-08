@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   initWorkoutSelection();
   setUserName();
+  getBmiCategory();
 });
 
 // Set user name in navbar profile
@@ -23,7 +24,63 @@ function initWorkoutSelection() {
 
   // Show recommended tag for home workout by default
   // In a real app, this would be based on user profile and preferences
-  document.getElementById("homeRecommended").style.display = "inline-block";
+
+  const itemUnderw = document.getElementById("exercise-item-unw")
+  const infoUnderw = document.getElementById("exercise-info-unw")
+  const itemStd = document.getElementById("exercise-item-std")
+  const infoStd = document.getElementById("exercise-info-std")
+  const itemOverw = document.getElementById("exercise-item-ovw")
+  const infoOverw = document.getElementById("exercise-info-ovw")
+  const itemObese = document.getElementById("exercise-item-obs")
+  const infoObese = document.getElementById("exercise-info-obs")
+  function getBmiCategory(){
+    const bmi = document.getElementById("userBmi");
+    const userBmi = localStorage.getItem("userBmi") || "User";
+    if(userBmi < 18.5){
+      document.getElementById("homeRecommended").style.display = "inline-block";
+      document.getElementById("outdoorRecommended").style.display = "none";
+      document.getElementById("woRecommended").style.display = "none";
+      infoStd.style.display = "none";
+      itemStd.style.display = "none";
+      infoOverw.style.display = "none";
+      itemOverw.style.display = "none";
+      infoObese.style.display = "none";
+      itemObese.style.display = "none";
+    }
+    else if(userBmi < 25){
+      document.getElementById("homeRecommended").style.display = "none";
+      document.getElementById("outdoorRecommended").style.display = "inline-block";
+      document.getElementById("woRecommended").style.display = "none";
+      infoUnderw.style.display = "none";
+      itemUnderw.style.display = "none";
+      infoOverw.style.display = "none";
+      itemOverw.style.display = "none";
+      infoObese.style.display = "none";
+      itemObese.style.display = "none";
+    }
+    else if(userBmi < 30){
+      document.getElementById("homeRecommended").style.display = "none";
+      document.getElementById("outdoorRecommended").style.display = "none";
+      document.getElementById("woRecommended").style.display = "inline-block";
+      infoUnderw.style.display = "none";
+      itemUnderw.style.display = "none";
+      infoStd.style.display = "none";
+      itemStd.style.display = "none";
+      infoObese.style.display = "none";
+      itemObese.style.display = "none";
+    }
+    else{
+      document.getElementById("woRecommended").style.display = "inline-block";
+      document.getElementById("homeRecommended").style.display = "none";
+      document.getElementById("outdoorRecommended").style.display = "none";
+      infoUnderw.style.display = "none";
+      itemUnderw.style.display = "none";
+      infoStd.style.display = "none";
+      itemStd.style.display = "none";
+      infoOverw.style.display = "none";
+      itemOverw.style.display = "none";
+    }
+  }
 
   // Handle workout selection
   workoutButtons.forEach((button) => {

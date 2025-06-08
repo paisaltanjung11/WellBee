@@ -136,7 +136,7 @@
                 <input type="checkbox" required />
                 <span
                   >I agree to the
-                  <a href="t&c.html">Terms & Conditions</a></span
+                  <a href="{{route ('tnc')}}">Terms & Conditions</a></span
                 >
               </label>
             </div>
