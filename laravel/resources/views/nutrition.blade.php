@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
-  <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}" />
+  <link rel="icon" type="image/x-icon" href="{{ asset('images/WellBee Logo.png') }}" />
   <!-- Load dark mode script early -->
   <script src="{{ asset('js/darkmode.js') }}" defer></script>
 </head>
@@ -235,17 +235,11 @@
         <div class="nutrition-tips">
           <h3>Tips for Success</h3>
           <ul>
-            <li>
-              Stay hydrated by drinking at least 8 glasses of water daily
+            <li>Stay hydrated by drinking at least 8 glasses of water daily</li>
             <li>Aim for 5 servings of fruits and vegetables each day</li>
             <li>Limit processed foods and added sugars</li>
-            <li>
-              Eat slowly and mindfully to better recognize hunger and fullness
-              cues
-            </li>
-            <li>
-              Prepare meals in advance to avoid unhealthy choices when busy
-            </li>
+            <li>Eat slowly and mindfully to better recognize hunger and fullness cues</li>
+            <li>Prepare meals in advance to avoid unhealthy choices when busy</li>
           </ul>
         </div>
       </div>

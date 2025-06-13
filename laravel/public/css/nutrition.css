@@ -445,6 +445,7 @@ a.btn-secondary:hover {
 
 .daily-meals {
     margin-bottom: 2.5rem;
+    padding: 2rem;
 }
 
 .daily-meals h3,
@@ -467,6 +468,10 @@ a.btn-secondary:hover {
     background-color: var(--accent-color);
 }
 
+.nutrition-tips {
+    padding: 2rem;
+}
+
 .meal {
     background: var(--white);
     border-radius: var(--border-radius);
@@ -476,22 +481,26 @@ a.btn-secondary:hover {
 }
 
 .meal-header {
-    background-color: var(--primary-color);
+    /* background-color: var(--primary-color); */
     color: var(--white);
     padding: 1rem 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    opacity: 1;
+    border-bottom: 2px solid var(--primary-color); /* contoh border */
 }
 
 .meal-header h4 {
     font-size: 1.6rem;
     font-weight: 600;
+    color: var(--white);
 }
 
 .meal-time {
     font-size: 1.2rem;
     opacity: 0.9;
+    color: var(--white);
 }
 
 .meal-content {
@@ -542,17 +551,6 @@ a.btn-secondary:hover {
     border-radius: var(--border-radius);
     font-size: 1.3rem;
     color: var(--text-light);
-}
-
-.nutrition-tips ul {
-    list-style: disc;
-    padding-left: 2rem;
-}
-
-.nutrition-tips li {
-    margin-bottom: 1rem;
-    color: var(--text-light);
-    font-size: 1.4rem;
 }
 
 .back-to-plans {

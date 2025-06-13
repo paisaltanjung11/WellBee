@@ -13,9 +13,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
-  <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}" />
+  <link rel="icon" type="image/x-icon" href="{{ asset('images/WellBee Logo.png') }}" />
   <!-- Load dark mode script early -->
   <script src="{{ asset('js/darkmode.js') }}" defer></script>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha512-sA+z0twU6CE2rGLnVljXgTC+Kc9xwXKDoZLLKYo3g6AJI4F1nbOBU7hnpaIFeBiUUlrntk7udx6s0FdzrGg6Q=="
+    crossorigin="" />
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha512-tAGcCf+uOrxM9mTxjVa7hPq2Hppv1WRS7c3QH23pHPzS9xuC9a4l1t5B8Cnc2+qv9vbEOJPFL2f79HyEJVoFAQ=="
+    crossorigin=""></script>
 </head>
 
 <body>
@@ -97,21 +106,6 @@
       </div>
     </section>
 
-    <!-- Map Section -->
-    <section class="map-section">
-      <div class="section-header">
-        <h2>Map View</h2>
-        <p id="resultsCount">Showing results near you</p>
-      </div>
-      <div class="map-container" id="map">
-        <!-- Map will be loaded here -->
-        <div class="map-placeholder">
-          <p>Map loading...</p>
-          <div class="loading-spinner"></div>
-        </div>
-      </div>
-    </section>
-
     <!-- Results Section -->
     <section class="results-section">
       <div class="section-header">
@@ -123,16 +117,17 @@
         <!-- Sample Results - Will be replaced dynamically -->
         <div class="location-card">
           <div class="location-img">
-            <img src="{{ asset('images/fitness-center.jpg') }}images/fitness-center.jpg" alt="Fitness Center" />
+            <img src="{{ asset('images/ftl-kmg.png') }}" alt="City Park" />
           </div>
           <div class="location-info">
-            <h3>Elite Fitness Center</h3>
+            <h3>FTL Kemanggisan</h3>
             <p class="location-type"><span class="tag">Gym</span></p>
-            <p class="location-address">123 Main Street, Anytown</p>
+            <p class="location-address">Jl. Raya Kb. Jeruk No.18, RT.8/RW.5, Kb. Jeruk, Kec. Kb. Jeruk, Kota Jakarta
+              Barat, Daerah Khusus Ibukota Jakarta 11530</p>
             <div class="location-details">
               <div class="rating">
-                <span class="stars">★★★★☆</span>
-                <span class="rating-count">4.2 (86 reviews)</span>
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">4,7 (85 reviews)</span>
               </div>
               <p class="distance">0.8 miles away</p>
             </div>
@@ -145,16 +140,17 @@
 
         <div class="location-card">
           <div class="location-img">
-            <img src="{{ asset('images/city-park.jpg') }}" alt="City Park" />
+            <img src="{{ asset('images/Central_Park.jpg') }}" alt="City Park" />
           </div>
           <div class="location-info">
             <h3>Central Park</h3>
             <p class="location-type"><span class="tag">Park</span></p>
-            <p class="location-address">101 Park Avenue, Anytown</p>
+            <p class="location-address">Jl. Letjen S. Parman No.Kav. 28, Tj. Duren Sel., Kec. Grogol petamburan, Kota
+              Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470</p>
             <div class="location-details">
               <div class="rating">
                 <span class="stars">★★★★★</span>
-                <span class="rating-count">4.8 (124 reviews)</span>
+                <span class="rating-count">4,7 (104.839 reviews)</span>
               </div>
               <p class="distance">1.2 miles away</p>
             </div>
@@ -167,16 +163,17 @@
 
         <div class="location-card">
           <div class="location-img">
-            <img src="{{ asset('images/health-food.jpg') }}" alt="Health Food Restaurant" />
+            <img src="{{ asset('images/greenly-jkt.png') }}" alt="Health Food Restaurant" />
           </div>
           <div class="location-info">
-            <h3>Green Plate Café</h3>
+            <h3>Greenly Tanjung Duren</h3>
             <p class="location-type"><span class="tag">Healthy Food</span></p>
-            <p class="location-address">789 Healthy Blvd, Anytown</p>
+            <p class="location-address">Jl. Taman Daan Mogot Raya No.4, RT.2/RW.1, Tj. Duren Utara, Kec. Grogol
+              petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11460</p>
             <div class="location-details">
               <div class="rating">
-                <span class="stars">★★★★☆</span>
-                <span class="rating-count">4.5 (92 reviews)</span>
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">4.4 (84 reviews)</span>
               </div>
               <p class="distance">1.5 miles away</p>
             </div>
@@ -190,6 +187,20 @@
 
       <div class="load-more">
         <button id="loadMoreBtn" class="btn-primary">Load More</button>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+      <div class="section-header">
+        <h2>Map View</h2>
+        <p id="resultsCount">Showing results near you</p>
+      </div>
+      <div class="map-container" id="map">
+        <div class="map-placeholder">
+          <p>Map loading...</p>
+          <div class="loading-spinner"></div>
+        </div>
       </div>
     </section>
   </main>
@@ -251,9 +262,6 @@
     </div>
   </footer>
 
-  <!-- Google Maps API (Add your API key here) -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap" async
-    defer></script>
   <script src="{{ asset('js/nearby.js') }}"></script>
 </body>
 

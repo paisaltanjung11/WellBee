@@ -497,7 +497,7 @@ a.btn-secondary:hover {
 .exercise-info-std,
 .exercise-info-ovw,
 .exercise-info-obs h3 {
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
     margin-bottom: 0.5rem;
     font-size: 1.6rem;
 }
