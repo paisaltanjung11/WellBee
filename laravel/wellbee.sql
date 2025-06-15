@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2025 at 10:40 AM
+-- Generation Time: Jun 08, 2025 at 11:39 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,47 @@ SET time_zone = "+00:00";
 --
 -- Database: `wellbee`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bmi_histories`
+--
+
+CREATE TABLE `bmi_histories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `bmi` float NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bmi_histories`
+--
+
+INSERT INTO `bmi_histories` (`id`, `user_id`, `bmi`, `created_at`, `updated_at`) VALUES
+(1, 5, 27.7, '2025-06-08 12:51:00', '2025-06-08 12:55:37'),
+(2, 5, 34.6, '2025-06-08 13:00:06', '2025-06-08 13:00:06'),
+(3, 5, 17.3, '2025-06-08 13:06:22', '2025-06-08 13:06:22'),
+(4, 5, 27.7, '2025-06-08 13:16:13', '2025-06-08 13:16:13'),
+(5, 5, 34.6, '2025-06-08 13:21:19', '2025-06-08 13:21:19'),
+(6, 5, 24.2, '2025-06-08 13:24:31', '2025-06-08 13:24:31'),
+(7, 5, 41.5, '2025-06-08 13:28:54', '2025-06-08 13:28:54'),
+(8, 5, 27.7, '2025-06-08 13:29:27', '2025-06-08 13:29:27'),
+(9, 5, 10.4, '2025-06-08 13:35:36', '2025-06-08 13:35:36'),
+(10, 5, 27.7, '2025-06-08 13:44:41', '2025-06-08 13:44:41'),
+(11, 6, 24.2, '2025-06-08 13:47:12', '2025-06-08 13:47:12'),
+(12, 6, 20.8, '2025-06-08 13:47:23', '2025-06-08 13:47:23'),
+(13, 6, 20.8, '2025-06-08 13:48:19', '2025-06-08 13:48:19'),
+(14, 6, 6.9, '2025-06-08 13:59:53', '2025-06-08 13:59:53'),
+(15, 6, 34.6, '2025-06-08 14:00:00', '2025-06-08 14:00:00'),
+(16, 6, 24.2, '2025-06-08 14:00:14', '2025-06-08 14:00:14'),
+(17, 6, 31.1, '2025-06-08 14:01:38', '2025-06-08 14:01:38'),
+(18, 6, 6.9, '2025-06-08 14:05:55', '2025-06-08 14:05:55'),
+(19, 7, 24.2, '2025-06-08 14:15:36', '2025-06-08 14:15:36'),
+(20, 7, 27.7, '2025-06-08 14:15:41', '2025-06-08 14:15:41'),
+(21, 7, 6.9, '2025-06-08 14:16:23', '2025-06-08 14:16:23');
 
 -- --------------------------------------------------------
 
@@ -115,7 +156,8 @@ CREATE TABLE `migrations` (
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '0001_01_01_000000_create_users_table', 1),
 (2, '0001_01_01_000001_create_cache_table', 1),
-(3, '0001_01_01_000002_create_jobs_table', 1);
+(3, '0001_01_01_000002_create_jobs_table', 1),
+(4, '2025_06_08_194212_create_bmi_histories_table', 2);
 
 -- --------------------------------------------------------
 
@@ -149,7 +191,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('CwIy6CKk1Yc3xB8uIrCum9ColOKJeZPDlFEesCcu', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiczAxell0eHY0VEVRUm1aSkFxb0RMd3RpQVBzWjdqb2wwUHFYSWFEZiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9kYXNoYm9hcmQiO31zOjM6InVybCI7YTowOnt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1749371667);
+('Q1caGjgMijWRVLKpclMyN8CulgrO3I7N5CgNsVHu', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiZFE1ZDBMNk9QZDlBRFBKcEI3Vkk1c283dVFNMjZPUjJORUdCamhCZiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fX0=', 1749417539);
 
 -- --------------------------------------------------------
 
@@ -177,14 +219,24 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `email_verified_at`, `password`, `weight`, `height`, `remember_token`, `created_at`, `updated_at`, `bmi`) VALUES
-(1, 'Paisal', 'Tanjung', 'paisaltan11@gmail.com', NULL, '$2y$12$xChW2OLnG6/JKnEdthNPdOrF5YeaJEzCeI/HqwgzmTYfytKYlyfQ2', 70, 170, NULL, '2025-06-07 22:39:08', '2025-06-08 00:59:44', 24.2),
+(1, 'Paisal', 'Tanjung', 'paisaltan11@gmail.com', NULL, '$2y$12$xChW2OLnG6/JKnEdthNPdOrF5YeaJEzCeI/HqwgzmTYfytKYlyfQ2', 80, 170, NULL, '2025-06-07 22:39:08', '2025-06-08 12:23:42', 27.7),
 (2, 'brian', 'casey', 'briancasey@gmail.com', NULL, '$2y$12$7iQ4V8xNs.C3wlHaS1f.m.na7st2JH4bTIO1uS1xVp.yVyIkg1HRS', 60, 168, NULL, '2025-06-07 22:45:02', '2025-06-08 00:37:01', 21.3),
 (3, 'riccardo', 'milos', 'riccardomilos@gmail.com', NULL, '$2y$12$tsfRmlhqNHj/yIvo2MLzWeo66Zqh6fIUaGvxmUi.6OkpXmd/H2qQ2', NULL, NULL, NULL, '2025-06-08 00:40:42', '2025-06-08 00:40:42', NULL),
-(4, 'dedrick', 'milos', 'dedrickmilos@gmail.com', NULL, '$2y$12$xXFEXiO9w7242vCS.qXFWe0kh7doO3mnOTyW6zvy0wKBeI0dC12I2', 72, 175, NULL, '2025-06-08 00:41:20', '2025-06-08 00:42:21', 23.5);
+(4, 'dedrick', 'milos', 'dedrickmilos@gmail.com', NULL, '$2y$12$xXFEXiO9w7242vCS.qXFWe0kh7doO3mnOTyW6zvy0wKBeI0dC12I2', 72, 175, NULL, '2025-06-08 00:41:20', '2025-06-08 00:42:21', 23.5),
+(5, 'test', 'test', 'test@gmail.com', NULL, '$2y$12$aGuu05nIzY5CASW9eK/UCOyBPTnoNeUJ.EmuL9en118yC7ZplAzyq', 80, 170, NULL, '2025-06-08 12:36:12', '2025-06-08 13:44:41', 27.7),
+(6, 'Paisal', 'Tanjung', 'paisaltanjung@gmail.com', NULL, '$2y$12$MajcLDMW8han38hJhECMXOYFQMg7a.H7XvALRGvpDdU89E0T2JEWq', 20, 170, NULL, '2025-06-08 13:46:41', '2025-06-08 14:05:55', 6.9),
+(7, 'John', 'Cena', 'johncena@gmail.com', NULL, '$2y$12$BMZwV5A4yHNyusiOqUSL2.V6H4H1EIkjoGgZVYz/4iyXZ44NGd1jG', 20, 170, NULL, '2025-06-08 14:15:10', '2025-06-08 14:16:23', 6.9);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `bmi_histories`
+--
+ALTER TABLE `bmi_histories`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `bmi_histories_user_id_foreign` (`user_id`);
 
 --
 -- Indexes for table `cache`
@@ -250,6 +302,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `bmi_histories`
+--
+ALTER TABLE `bmi_histories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -265,13 +323,23 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `bmi_histories`
+--
+ALTER TABLE `bmi_histories`
+  ADD CONSTRAINT `bmi_histories_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

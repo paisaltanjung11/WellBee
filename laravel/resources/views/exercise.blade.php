@@ -130,11 +130,11 @@
       <!-- Home Workout Exercises -->
       <div class="exercise-list" id="homeExercises">
         <!-- Universal / All BMI -->
-        <div class="exercise-item-uni">
+        <div class="exercise-item">
           <div class="exercise-img">
             <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Brisk Walking" />
           </div>
-          <div class="exercise-info-uni">
+          <div class="exercise-info">
             <h3>Brisk Walking</h3>
             <p>
               Low impact cardio, safe for all BMI levels. Helps build stamina.
@@ -327,11 +327,11 @@
       <!-- Outdoor Workout Exercises (Hidden initially) -->
       <div class="exercise-list" id="outdoorExercises" style="display: none">
         <!-- Universal / All BMI -->
-        <div class="exercise-item-uni">
+        <div class="exercise-item">
           <div class="exercise-img">
             <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Brisk Walking" />
           </div>
-          <div class="exercise-info-uni">
+          <div class="exercise-info">
             <h3>Brisk Walking</h3>
             <p>
               Low impact cardio, suitable for all fitness levels. Improves
@@ -482,11 +482,11 @@
       <!-- Gym Workout Exercises (Hidden initially) -->
       <div class="exercise-list" id="gymExercises" style="display: none">
         <!-- Universal / All BMI -->
-        <div class="exercise-item-uni">
+        <div class="exercise-item">
           <div class="exercise-img">
             <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Treadmill Walking" />
           </div>
-          <div class="exercise-info-uni">
+          <div class="exercise-info">
             <h3>Treadmill Walking</h3>
             <p>
               Low impact cardio suitable for all fitness levels. Great warm-up

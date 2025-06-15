@@ -457,7 +457,7 @@ a.btn-secondary:hover {
     margin-bottom: 3rem;
 }
 
-.exercise-item-uni,
+.exercise-item,
 .exercise-item-unw,
 .exercise-item-std,
 .exercise-item-ovw,
@@ -484,7 +484,7 @@ a.btn-secondary:hover {
     object-fit: cover;
 }
 
-.exercise-info-uni,
+.exercise-info,
 .exercise-info-unw,
 .exercise-info-std,
 .exercise-info-ovw,
@@ -492,7 +492,7 @@ a.btn-secondary:hover {
     flex: 1;
 }
 
-.exercise-info-uni,
+.exercise-info,
 .exercise-info-unw,
 .exercise-info-std,
 .exercise-info-ovw,
@@ -502,7 +502,7 @@ a.btn-secondary:hover {
     font-size: 1.6rem;
 }
 
-.exercise-info-uni,
+.exercise-info,
 .exercise-info-unw,
 .exercise-info-std,
 .exercise-info-ovw,

@@ -51,14 +51,12 @@ function initWorkoutSelection() {
     const exerciseTypeTitle = document.getElementById("exerciseTypeTitle");
     const backToWorkoutsBtn = document.getElementById("backToWorkouts");
 
-    const itemUnderw = document.getElementById("exercise-item-unw");
-    const infoUnderw = document.getElementById("exercise-info-unw");
-    const itemStd = document.getElementById("exercise-item-std");
-    const infoStd = document.getElementById("exercise-info-std");
-    const itemOverw = document.getElementById("exercise-item-ovw");
-    const infoOverw = document.getElementById("exercise-info-ovw");
-    const itemObese = document.getElementById("exercise-item-obs");
-    const infoObese = document.getElementById("exercise-info-obs");
+    const userBmi = window.userData.bmi;
+    if (userBmi === null) {
+        // No BMI → no recommendation
+        return;
+    }
+    
 
     // Handle workout selection
     workoutButtons.forEach((button) => {
@@ -89,6 +87,51 @@ function initWorkoutSelection() {
                 top: exerciseDetails.offsetTop - 80,
                 behavior: "smooth",
             });
+            // Show exercises by BMI
+            document.querySelectorAll(".exercise-item-unw").forEach(item =>{
+                item.style.display = "none"
+            });
+            document.querySelectorAll(".exercise-info-unw").forEach(info =>{
+                info.style.display = "none"
+            });
+            document.querySelectorAll(".exercise-item-std").forEach(item =>{
+                item.style.display = "none"
+            });
+            document.querySelectorAll(".exercise-info-std").forEach(info =>{
+                info.style.display = "none"
+            });
+            document.querySelectorAll(".exercise-item-ovw").forEach(item =>{
+                item.style.display = "none"
+            });
+            document.querySelectorAll(".exercise-info-ovw").forEach(info =>{
+                info.style.display = "none"
+            });
+            document.querySelectorAll(".exercise-item-obs").forEach(item =>{
+                item.style.display = "none"
+            });
+            document.querySelectorAll(".exercise-info-obs").forEach(info =>{
+                info.style.display = "none"
+            });
+            const bmiRecommendationMap = [
+                { min: 0, max: 18.5, item: ".exercise-item-unw", info: ".exercise-info-unw" },
+                { min: 18.5, max: 25, item: ".exercise-item-std", info: ".exercise-info-std" },
+                { min: 25, max: 30, item: ".exercise-item-ovw", info: ".exercise-info-ovw" }, 
+                { min: 30, max: 1000, item: ".exercise-item-obs", info: ".exercise-info-obs" }, 
+            ];
+
+            const recommendation = bmiRecommendationMap.find(
+                (rule) => userBmi >= rule.min && userBmi < rule.max
+            );
+
+            if(recommendation)
+            {
+                document.querySelectorAll(recommendation.item).forEach(item => {
+                    item.style.display = "flex";
+                });
+                document.querySelectorAll(recommendation.info).forEach(info => {
+                    info.style.display = "inline-block";
+                });
+            } 
         });
     });
 
