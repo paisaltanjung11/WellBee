@@ -136,7 +136,7 @@
             </div>
             <div class="meal-content">
               <div class="meal-image">
-                <img src="{{ asset('images/breakfast.jpg') }}" alt="Healthy Breakfast" />
+                <img src="{{ asset('images/nutrition/breakfast.jpg') }}" alt="Healthy Breakfast" />
               </div>
               <div class="meal-details">
                 <h5>Oatmeal with Fruits</h5>
@@ -162,7 +162,7 @@
             </div>
             <div class="meal-content">
               <div class="meal-image">
-                <img src="{{ asset('images/lunch.jpg') }}" alt="Healthy Lunch" />
+                <img src="{{ asset('images/nutrition/lunch.jpg') }}" alt="Healthy Lunch" />
               </div>
               <div class="meal-details">
                 <h5>Grilled Chicken Salad</h5>
@@ -188,7 +188,7 @@
             </div>
             <div class="meal-content">
               <div class="meal-image">
-                <img src="{{ asset('images/dinner.jpg') }}" alt="Healthy Dinner" />
+                <img src="{{ asset('images/nutrition/dinner.jpg') }}" alt="Healthy Dinner" />
               </div>
               <div class="meal-details">
                 <h5>Baked Salmon with Vegetables</h5>
@@ -213,7 +213,7 @@
             </div>
             <div class="meal-content">
               <div class="meal-image">
-                <img src="{{ asset('images/snack.jpg') }}" alt="Healthy Snacks" />
+                <img src="{{ asset('images/nutrition/snack.png') }}" alt="Healthy Snacks" />
               </div>
               <div class="meal-details">
                 <h5>Healthy Snack Options</h5>
@@ -256,7 +256,7 @@
             </div>
             <div class="meal-content">
               <div class="meal-image">
-                <img src="{{ asset('images/weight-loss-breakfast.jpg') }}" alt="Weight Loss Breakfast" />
+                <img src="{{ asset('images/nutrition/weight-loss-breakfast.png') }}" alt="Weight Loss Breakfast" />
               </div>
               <div class="meal-details">
                 <h5>Protein-Packed Smoothie</h5>
@@ -281,7 +281,7 @@
             </div>
             <div class="meal-content">
               <div class="meal-image">
-                <img src="{{ asset('images/weight-loss-lunch.jpg') }}" alt="Weight Loss Lunch" />
+                <img src="{{ asset('images/nutrition/weight-loss-lunch.png') }}" alt="Weight Loss Lunch" />
               </div>
               <div class="meal-details">
                 <h5>Lean Protein Bowl</h5>
@@ -306,7 +306,7 @@
             </div>
             <div class="meal-content">
               <div class="meal-image">
-                <img src="{{ asset('images/weight-loss-dinner.jpg') }}" alt="Weight Loss Dinner" />
+                <img src="{{ asset('images/nutrition/weight-loss-dinner.jpg') }}" alt="Weight Loss Dinner" />
               </div>
               <div class="meal-details">
                 <h5>White Fish with Vegetables</h5>
@@ -358,7 +358,7 @@
             </div>
             <div class="meal-content">
               <div class="meal-image">
-                <img src="{{ asset('images/muscle-gain-breakfast.jpg') }}" alt="Muscle Gain Breakfast" />
+                <img src="{{ asset('images/nutrition/muscle-gain-breakfast.jpg') }}" alt="Muscle Gain Breakfast" />
               </div>
               <div class="meal-details">
                 <h5>High-Protein Oatmeal</h5>
@@ -383,7 +383,7 @@
             </div>
             <div class="meal-content">
               <div class="meal-image">
-                <img src="{{ asset('images/muscle-gain-lunch.jpg') }}" alt="Muscle Gain Lunch" />
+                <img src="{{ asset('images/nutrition/muscle-gain-lunch.jpg') }}" alt="Muscle Gain Lunch" />
               </div>
               <div class="meal-details">
                 <h5>Lean Mass Builder</h5>
@@ -408,7 +408,7 @@
             </div>
             <div class="meal-content">
               <div class="meal-image">
-                <img src="{{ asset('images/muscle-gain-dinner.jpg') }}" alt="Muscle Gain Dinner" />
+                <img src="{{ asset('images/nutrition/muscle-gain-dinner.jpg') }}" alt="Muscle Gain Dinner" />
               </div>
               <div class="meal-details">
                 <h5>Recovery Fuel</h5>
@@ -433,7 +433,7 @@
             </div>
             <div class="meal-content">
               <div class="meal-image">
-                <img src="{{ asset('images/post-workout.jpg') }}" alt="Post-Workout Shake" />
+                <img src="{{ asset('images/nutrition/post-workout.jpg') }}" alt="Post-Workout Shake" />
               </div>
               <div class="meal-details">
                 <h5>Muscle Recovery Shake</h5>

@@ -14,11 +14,6 @@ Route::middleware('guest')->group(function () {
         return view('index');
     })->name('index');
 
-    // About Us
-    Route::get('/about-us', function () {
-        return view('about-us');
-    })->name('about-us');
-
     // Login
     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [LoginController::class, 'login'])->name('login.attempt');
@@ -36,6 +31,11 @@ Route::get('/bmi', function () {
     $user = Auth::user();
     return view('bmi', compact('user'));
 })->name('bmi');
+
+// About Us
+    Route::get('/about-us', function () {
+        return view('about-us');
+    })->name('about-us');
 
 Route::post('/bmi/save', [BmiController::class, 'save'])->name('bmi.save')->middleware('auth');
 

@@ -21,6 +21,7 @@
 <body>
   <header class="header">
     <a href="{{ route('index') }}" class="logo" aria-label="WellBee Home">
+      
       <span class="well">Well</span><span class="bee">Bee</span>
     </a>
 

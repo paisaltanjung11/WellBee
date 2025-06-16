@@ -92,17 +92,23 @@ function setUserName() {
 
 // Init map
 function initMap() {
-    map = L.map("map").setView([userLocation.lat, userLocation.lng], 13);
+    map = new google.maps.Map(document.getElementById("map"), {
+        center: userLocation,
+        zoom: 13,
+    });
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution:
-            '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    }).addTo(map);
+    const userMarker = new google.maps.Marker({
+        position: userLocation,
+        map: map,
+        title: "Your Location",
+    });
 
-    L.marker([userLocation.lat, userLocation.lng])
-        .addTo(map)
-        .bindPopup("Your Location")
-        .openPopup();
+    const infoWindow = new google.maps.InfoWindow({
+        content: "<p>Your Location</p>",
+    });
+    userMarker.addListener("click", () => {
+        infoWindow.open(map, userMarker);
+    });
 
     displayLocations(currentFilter, currentPage, true);
 }
@@ -231,19 +237,28 @@ function generateStars(rating) {
 }
 
 function addLocationMarker(location) {
-    const marker = L.marker([
-        location.coordinates.lat,
-        location.coordinates.lng,
-    ]).addTo(map).bindPopup(`
+    const marker = new google.maps.Marker({
+        position: {
+            lat: location.coordinates.lat,
+            lng: location.coordinates.lng,
+        },
+        map: map,
+        title: location.name,
+    });
+
+    const infoWindow = new google.maps.InfoWindow({
+        content: `
             <div class="map-info-window">
                 <h3>${location.name}</h3>
                 <p>${location.type}</p>
                 <p>${location.distance} miles away</p>
                 <p>Rating: ${location.rating.toFixed(1)}/5</p>
             </div>
-        `);
+        `,
+    });
 
-    marker.on("click", () => {
+    marker.addListener("click", () => {
+        infoWindow.open(map, marker);
         highlightLocationCard(location.id);
     });
 
@@ -251,7 +266,7 @@ function addLocationMarker(location) {
 }
 
 function clearMapMarkers() {
-    markers.forEach((marker) => map.removeLayer(marker));
+    markers.forEach(marker => marker.setMap(null));
     markers = [];
 }
 
