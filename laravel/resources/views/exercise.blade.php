@@ -151,7 +151,7 @@
         <!-- Underweight Focus -->
         <div class="exercise-item-unw">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Wall Push-ups" />
+            <img src="{{asset('images/workout/home-workout/wallpushup.gif')}}" alt="Wall Push-ups" />
           </div>
           <div class="exercise-info-unw">
             <h3>Wall Push-ups</h3>
@@ -170,7 +170,7 @@
 
         <div class="exercise-item-unw">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Glute Bridge" />
+            <img src="{{asset('images/workout/home-workout/glutebridge.gif')}}" alt="Glute Bridge" />
           </div>
           <div class="exercise-info-unw">
             <h3>Glute Bridge</h3>
@@ -209,7 +209,7 @@
 
         <div class="exercise-item-std">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Bodyweight Squats" />
+            <img src="{{asset('images/workout/home-workout/bodyweightsquat.gif')}}" alt="Bodyweight Squats" />
           </div>
           <div class="exercise-info-std">
             <h3>Bodyweight Squats</h3>
@@ -248,7 +248,7 @@
         <!-- Overweight Focus -->
         <div class="exercise-item-ovw">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Step Touch" />
+            <img src="{{asset('images/workout/home-workout/steptouch.gif')}}" alt="Step Touch" />
           </div>
           <div class="exercise-info-ovw">
             <h3>Step Touch</h3>
@@ -267,7 +267,7 @@
 
         <div class="exercise-item-ovw">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Seated March" />
+            <img src="{{asset('images/workout/home-workout/seatedmarch.gif')}}" alt="Seated March" />
           </div>
           <div class="exercise-info-ovw">
             <h3>Seated March</h3>
@@ -287,7 +287,7 @@
         <!-- Obese Focus -->
         <div class="exercise-item-obs">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Chair Squat" />
+            <img src="{{asset('images/workout/home-workout/chairsquat.gif')}}" alt="Chair Squat" />
           </div>
           <div class="exercise-info-obs">
             <h3>Chair Squat</h3>
@@ -306,7 +306,7 @@
 
         <div class="exercise-item-obs">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Wall Push-ups" />
+            <img src="{{asset('images/workout/home-workout/wallpushup.gif')}}" alt="Wall Push-ups" />
           </div>
           <div class="exercise-info-obs">
             <h3>Wall Push-ups</h3>
@@ -349,7 +349,7 @@
         <!-- Underweight Focus -->
         <div class="exercise-item-unw">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Dynamic Stretching" />
+            <img src="{{asset('images/workout/outdoor-workout/dynamicstreching.wedp')}}" alt="Dynamic Stretching" />
           </div>
           <div class="exercise-info-unw">
             <h3>Dynamic Stretching</h3>
@@ -369,7 +369,7 @@
         <!-- Normal BMI -->
         <div class="exercise-item-std">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Jogging" />
+            <img src="{{asset('images/workout/outdoor-workout/jogging.gif')}}" alt="Jogging" />
           </div>
           <div class="exercise-info-std">
             <h3>Jogging</h3>
@@ -388,7 +388,7 @@
 
         <div class="exercise-item-std">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Park Bench Dips" />
+            <img src="{{asset('images/workout/outdoor-workout/benchdrip.gif')}}" alt="Park Bench Dips" />
           </div>
           <div class="exercise-info-std">
             <h3>Park Bench Dips</h3>
@@ -404,7 +404,7 @@
 
         <div class="exercise-item-std">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Jumping Jacks" />
+            <img src="{{asset('images/workout/outdoor-workout/jumpingjack.gif')}}" alt="Jumping Jacks" />
           </div>
           <div class="exercise-info-std">
             <h3>Jumping Jacks</h3>
@@ -423,7 +423,7 @@
         <!-- Overweight Focus -->
         <div class="exercise-item-ovw">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Step-ups on Bench" />
+            <img src="{{asset('images/workout/outdoor-workout/stepup.gif')}}" alt="Step-ups on Bench" />
           </div>
           <div class="exercise-info-ovw">
             <h3>Step-ups on Bench</h3>
@@ -442,7 +442,7 @@
         <!-- Obese Focus -->
         <div class="exercise-item-obs">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Side Steps" />
+            <img src="{{asset('images/workout/outdoor-workout/sidestep.gif')}}" alt="Side Steps" />
           </div>
           <div class="exercise-info-obs">
             <h3>Side Steps</h3>
@@ -461,7 +461,7 @@
 
         <div class="exercise-item-obs">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Seated Arm Raises" />
+            <img src="{{asset('images/workout/outdoor-workout/seatedarmraise.gif')}}" alt="Seated Arm Raises" />
           </div>
           <div class="exercise-info-obs">
             <h3>Seated Arm Raises</h3>
@@ -484,7 +484,7 @@
         <!-- Universal / All BMI -->
         <div class="exercise-item">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Treadmill Walking" />
+            <img src="{{asset('images/workout/gym-workout/treadmillwalk.gif')}}" alt="Treadmill Walking" />
           </div>
           <div class="exercise-info">
             <h3>Treadmill Walking</h3>
@@ -504,7 +504,7 @@
         <!-- Underweight Focus -->
         <div class="exercise-item-unw">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Seated Cable Row" />
+            <img src="{{asset('images/workout/gym-workout/seatedcablerow.gif')}}" alt="Seated Cable Row" />
           </div>
           <div class="exercise-info-unw">
             <h3>Seated Cable Row</h3>
@@ -524,7 +524,7 @@
         <!-- Normal BMI -->
         <div class="exercise-item-std">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Bench Press" />
+            <img src="{{asset('images/workout/gym-workout/benchpress.gif')}}" alt="Bench Press" />
           </div>
           <div class="exercise-info-std">
             <h3>Bench Press</h3>
@@ -542,7 +542,7 @@
 
         <div class="exercise-item-std">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Deadlift" />
+            <img src="{{asset('images/workout/gym-workout/deadlift.gif')}}" alt="Deadlift" />
           </div>
           <div class="exercise-info-std">
             <h3>Deadlift</h3>
@@ -560,7 +560,7 @@
 
         <div class="exercise-item-std">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Lat Pulldown" />
+            <img src="{{asset('images/workout/gym-workout/latpulldown.gif')}}" alt="Lat Pulldown" />
           </div>
           <div class="exercise-info-std">
             <h3>Lat Pulldown</h3>
@@ -577,7 +577,7 @@
         <!-- Overweight Focus -->
         <div class="exercise-item-ovw">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Leg Press" />
+            <img src="{{asset('images/workout/gym-workout/legpress.gif')}}" alt="Leg Press" />
           </div>
           <div class="exercise-info-ovw">
             <h3>Leg Press</h3>
@@ -597,7 +597,7 @@
         <!-- Obese Focus -->
         <div class="exercise-item-obs">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Chest Press Machine" />
+            <img src="{{asset('images/workout/gym-workout/chestpress.gif')}}" alt="Chest Press Machine" />
           </div>
           <div class="exercise-info-obs">
             <h3>Chest Press Machine</h3>
@@ -616,7 +616,7 @@
 
         <div class="exercise-item-obs">
           <div class="exercise-img">
-            <img src="{{asset('images/workout/temp-animation.gif')}}" alt="Stretching Machine or Mat Stretch" />
+            <img src="{{asset('images/workout/gym-workout/strechmachine.webp')}}" alt="Stretching Machine or Mat Stretch" />
           </div>
           <div class="exercise-info-obs">
             <h3>Stretching Machine or Mat Stretch</h3>
