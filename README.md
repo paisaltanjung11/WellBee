@@ -131,4 +131,4 @@ During the development of WellBee, I gained valuable experience in:
 -   2702245034 - Dedrick Justin
 -   2702301344 - Gregorius Oliver Rachmadi
 -   2702262766 - Paisal Tanjung
--   # 2702279142 - Riccardo Rehyan Setiawan
+-   2702279142 - Riccardo Rehyan Setiawan
