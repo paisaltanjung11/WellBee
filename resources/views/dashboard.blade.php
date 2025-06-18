@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="{{ asset('images/WellBee Logo.png') }}" />
+  <link rel="icon" type="image/x-icon" href="{{ asset('images/WellBee Logo.png') }}" />
   <!-- Load dark mode script early -->
   <script src="{{ asset('js/darkmode.js') }}" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -21,7 +21,7 @@
 <body>
   <header class="header">
     <a href="{{ route('index') }}" class="logo" aria-label="WellBee Home">
-      
+
       <span class="well">Well</span><span class="bee">Bee</span>
     </a>
 

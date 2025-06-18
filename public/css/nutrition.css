@@ -481,7 +481,7 @@ a.btn-secondary:hover {
 }
 
 .meal-header {
-    /* background-color: var(--primary-color); */
+    background-color: var(--primary-color);
     color: var(--white);
     padding: 1rem 1.5rem;
     display: flex;
@@ -494,13 +494,13 @@ a.btn-secondary:hover {
 .meal-header h4 {
     font-size: 1.6rem;
     font-weight: 600;
-    color: var(--white);
+    color: var(--white) !important;
 }
 
 .meal-time {
     font-size: 1.2rem;
     opacity: 0.9;
-    color: var(--white);
+    color: var(--white) !important;
 }
 
 .meal-content {
@@ -679,6 +679,59 @@ a.btn-secondary:hover {
     color: #cccccc;
 }
 
+/* Dark mode button styles */
+.dark-mode a.btn-secondary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.dark-mode a.btn-secondary:hover {
+    background-color: #006d80;
+}
+
+.dark-mode .btn-secondary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.dark-mode .btn-secondary:hover {
+    background-color: #006d80;
+    box-shadow: 0 4px 15px rgba(0, 136, 160, 0.3);
+}
+
+.dark-mode .sign-in {
+    background-color: var(--primary-color);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.8rem 1.6rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+    font-weight: 600;
+}
+
+.dark-mode .sign-in:hover {
+    background-color: #006d80;
+    box-shadow: 0 0 10px rgba(0, 136, 160, 0.4);
+}
+
+/* Logout button styles */
+.sign-in {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-light);
+    padding: 0.8rem 1.6rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.sign-in:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
     html {
@@ -788,4 +841,15 @@ a.btn-secondary:hover {
     .meal-plan-categories {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+.dark-mode .btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 136, 160, 0.25);
+}
+
+.dark-mode .btn-primary:hover {
+    background-color: #006d80;
+    box-shadow: 0 4px 15px rgba(0, 136, 160, 0.4);
 }
