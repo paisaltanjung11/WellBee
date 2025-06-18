@@ -1,4 +1,3 @@
-
 # WellBee 🐝
 
 ## Your Personal Health Companion for University Students
@@ -11,12 +10,12 @@ University students often struggle to maintain healthy habits due to academic pr
 
 ## Key Features
 
-- **BMI Calculator & Tracking**: Calculate and monitor your Body Mass Index over time
-- **Personalized Health Recommendations**: Receive tailored advice based on your health metrics
-- **Exercise Library**: Access curated workout routines suitable for students' busy schedules
-- **Nutrition Guidance**: Find healthy meal recommendations and nutrition tips
-- **Progress Dashboard**: Visualize your health journey with interactive charts
-- **Nearby Health Resources**: Locate fitness centers, healthy food options, and medical facilities near your campus
+-   **BMI Calculator & Tracking**: Calculate and monitor your Body Mass Index over time
+-   **Personalized Health Recommendations**: Receive tailored advice based on your health metrics
+-   **Exercise Library**: Access curated workout routines suitable for students' busy schedules
+-   **Nutrition Guidance**: Find healthy meal recommendations and nutrition tips
+-   **Progress Dashboard**: Visualize your health journey with interactive charts
+-   **Nearby Health Resources**: Locate fitness centers, healthy food options, and medical facilities near your campus
 
 ## Live Demo
 
@@ -24,19 +23,19 @@ _Note: The application is currently not deployed. Source code is available in th
 
 ## Tech Stack
 
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: PHP (Laravel 12)
-- **Database**: MySQL
-- **Charts/Visualization**: Chart.js
-- **Package Management**: Composer, NPM
-- **Version Control**: Git
+-   **Frontend**: HTML, CSS, JavaScript
+-   **Backend**: PHP (Laravel 12)
+-   **Database**: MySQL
+-   **Charts/Visualization**: Chart.js
+-   **Package Management**: Composer, NPM
+-   **Version Control**: Git
 
 ### Prerequisites
 
-- PHP 8.2 or higher
-- Composer
-- Node.js and NPM
-- MySQL
+-   PHP 8.2 or higher
+-   Composer
+-   Node.js and NPM
+-   MySQL
 
 ## Screenshots
 
@@ -110,26 +109,26 @@ Interactive map integration using Google Maps API.
 
 During the development of WellBee, I gained valuable experience in:
 
-- Building health-focused web applications that handle sensitive user data
-- Implementing data visualization for health metrics tracking
-- Creating personalized recommendation systems based on user data
-- Balancing technical functionality with user-friendly design
-- Optimizing Laravel applications for performance
-- Implementing responsive design for various device sizes
+-   Building health-focused web applications that handle sensitive user data
+-   Implementing data visualization for health metrics tracking
+-   Creating personalized recommendation systems based on user data
+-   Balancing technical functionality with user-friendly design
+-   Optimizing Laravel applications for performance
+-   Implementing responsive design for various device sizes
 
 ## Future Improvements
 
-- **Machine Learning Integration**: Implement ML algorithms for more personalized health recommendations
-- **Social Features**: Add community support elements to help students motivate each other
-- **Expanded Exercise Library**: Include video demonstrations and more varied workout routines
-- **Meal Planning Tool**: Develop a comprehensive meal planner with shopping lists
-- **Mobile App**: Create native mobile applications for iOS and Android
-- **Integration with Fitness Wearables**: Connect with fitness trackers and smartwatches for automated data collection
+-   **Machine Learning Integration**: Implement ML algorithms for more personalized health recommendations
+-   **Social Features**: Add community support elements to help students motivate each other
+-   **Expanded Exercise Library**: Include video demonstrations and more varied workout routines
+-   **Meal Planning Tool**: Develop a comprehensive meal planner with shopping lists
+-   **Mobile App**: Create native mobile applications for iOS and Android
+-   **Integration with Fitness Wearables**: Connect with fitness trackers and smartwatches for automated data collection
 
 ## Credits / Team Members
 
-- 2702241553 - Brian Casey Reynard
-- 2702245034 - Dedrick Justin
-- 2702301344 - Gregorius Oliver Rachmadi
-- 2702262766 - Paisal Tanjung
-- # 2702279142 - Riccardo Rehyan Setiawan
+-   2702241553 - Brian Casey Reynard
+-   2702245034 - Dedrick Justin
+-   2702301344 - Gregorius Oliver Rachmadi
+-   2702262766 - Paisal Tanjung
+-   # 2702279142 - Riccardo Rehyan Setiawan
